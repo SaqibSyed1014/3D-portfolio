@@ -1,0 +1,117 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  overflow-x: hidden;
+  font-family: "Avenir Next", sans-serif;
+}
+
+.webgl{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+main{
+  z-index: 2;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 6fr 4fr 1fr;
+  grid-template-rows: 100vh auto 1fr;
+  grid-template-areas:
+        ". header header ."
+        ". intro . ."
+        ". history history ."
+        ". footer footer ."
+}
+
+.name{
+  grid-area: header;
+  margin-top: 6rem;
+}
+.name h1{
+  font-size: 5rem;
+  color: white;
+  font-weight: 700;
+  display: inline-block;
+}
+.intro{
+  grid-area: intro;
+  align-self: end;
+  padding: 5rem 0;
+}
+.intro p{
+  font-size: 3rem;
+  line-height: 1.4;
+  color: rgba(200,200,200,.85);
+}
+.job-history{
+  grid-area: history;
+  margin-bottom: 5rem;
+}
+.job-history .job-timeline{
+  background: hsl(88, 25%, 11%, .5);
+  backdrop-filter: saturate(180%) blur(40px);
+  padding: 4rem 6rem;
+  font-size: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.job-history .job-timeline:first-child{
+  border-top-right-radius: 5rem;
+  border-top-left-radius: 5rem;
+}
+.job-history .job-timeline:last-child{
+  border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+}
+.job-history .job-timeline a{
+
+}
+.job-timeline .timeline-time{
+  font-weight: 600;
+  color: rgba(200,200,200,.85);
+  display: block;
+  line-height: 1.4;
+}
+.job-history .job-timeline p{
+  font-size: 1.2rem;
+  color: rgba(200,200,200,.85);
+  line-height: 1.5;
+}
+footer{
+  grid-area: footer;
+  padding: 2rem 0;
+  font-size: 1.3rem;
+  color: rgba(200,200,200,.85);
+}
+a{
+  color: white;
+}
+
+
+.dpkCursor {
+  height: 1.75rem;
+  width: 1.75rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: white;
+  border: 1px solid #fff;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999;
+  transition: width 0.5s ease-in, height 0.5s ease-in;
+}
+.dpkCursor.hover{
+  height: 3rem;
+  width: 3rem;
+}
+.dpkCursor.hidden{
+  display: none;
+}
